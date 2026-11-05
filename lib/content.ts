@@ -58,18 +58,46 @@ export type Look = {
   glasses?: boolean;
 };
 
-export type WallMayor = { id: string; name: string; short: string; term: string; look: Look; photo?: string };
+export type WallMayor = { id: string; name: string; short: string; term: string; look?: Look; photo?: string };
 
 export const wallOfMayors: WallMayor[] = [
-  { id: "lacson", name: "Arsenio Lacson", short: "Lacson", term: "1952–1962", look: { skin: "#d9a77c", hair: "slick", hairColor: "#1f1712", attire: "suit" } },
-  { id: "villegas", name: "Antonio Villegas", short: "Villegas", term: "1962–1971", look: { skin: "#cf9a70", hair: "short", hairColor: "#231a14", attire: "suit", glasses: true } },
-  { id: "bagatsing", name: "Ramon Bagatsing", short: "Bagatsing", term: "1972–1986", look: { skin: "#c48d63", hair: "wave", hairColor: "#3b3b3b", attire: "barong" } },
-  { id: "lopez", name: "Mel Lopez", short: "Lopez", term: "1986–1992", look: { skin: "#d6a57d", hair: "short", hairColor: "#2a201a", attire: "barong", glasses: true } },
-  { id: "lim", name: "Alfredo Lim", short: "Lim", term: "1992–1998, 2007–2013", look: { skin: "#dcae86", hair: "short", hairColor: "#8d8a86", attire: "suit" } },
-  { id: "atienza", name: "Lito Atienza", short: "Atienza", term: "1998–2007", look: { skin: "#c99467", hair: "bald", hairColor: "#4a4a4a", attire: "barong" } },
-  { id: "estrada", name: "Joseph Estrada", short: "Estrada", term: "2013–2019", look: { skin: "#c08a5f", hair: "slick", hairColor: "#191210", attire: "barong" } },
-  { id: "moreno", name: "Isko Moreno", short: "Moreno", term: "2019–2022, 2025–", look: { skin: "#d1a07a", hair: "short", hairColor: "#16110d", attire: "barong" } },
-  { id: "lacuna", name: "Honey Lacuna", short: "Lacuna", term: "2022–2025", look: { skin: "#e0b48e", hair: "bob", hairColor: "#c9a46a", attire: "blouse" } },
+  { id: "lacson", photo: "/mayors/lacson.png", name: "Arsenio Lacson", short: "Lacson", term: "1952–1962", look: { skin: "#d9a77c", hair: "slick", hairColor: "#1f1712", attire: "suit" } },
+  { id: "villegas", photo: "/mayors/villegas.png", name: "Antonio Villegas", short: "Villegas", term: "1962–1971", look: { skin: "#cf9a70", hair: "short", hairColor: "#231a14", attire: "suit", glasses: true } },
+  { id: "bagatsing", photo: "/mayors/bagatsing.png", name: "Ramon Bagatsing", short: "Bagatsing", term: "1972–1986", look: { skin: "#c48d63", hair: "wave", hairColor: "#3b3b3b", attire: "barong" } },
+  { id: "lopez", photo: "/mayors/lopez.png", name: "Mel Lopez", short: "Lopez", term: "1986–1992", look: { skin: "#d6a57d", hair: "short", hairColor: "#2a201a", attire: "barong", glasses: true } },
+  { id: "lim", photo: "/mayors/lim.png", name: "Alfredo Lim", short: "Lim", term: "1992–1998, 2007–2013", look: { skin: "#dcae86", hair: "short", hairColor: "#8d8a86", attire: "suit" } },
+  { id: "atienza", photo: "/mayors/atienza.png", name: "Lito Atienza", short: "Atienza", term: "1998–2007", look: { skin: "#c99467", hair: "bald", hairColor: "#4a4a4a", attire: "barong" } },
+  { id: "estrada", photo: "/mayors/estrada.png", name: "Joseph Estrada", short: "Estrada", term: "2013–2019", look: { skin: "#c08a5f", hair: "slick", hairColor: "#191210", attire: "barong" } },
+  { id: "moreno", photo: "/mayors/moreno.png", name: "Isko Moreno", short: "Moreno", term: "2019–2022, 2025–", look: { skin: "#d1a07a", hair: "short", hairColor: "#16110d", attire: "barong" } },
+  { id: "lacuna", photo: "/mayors/lacuna.png", name: "Honey Lacuna", short: "Lacuna", term: "2022–2025", look: { skin: "#e0b48e", hair: "bob", hairColor: "#c9a46a", attire: "blouse" } },
+];
+
+// Side-rail decoration only: every mayor in order, 12 per side like the real wall.
+// Terms from Wikipedia's "Mayor of Manila" list. No photos yet, so these show a
+// plain frame with initials; add `photo` to any of them the same way as above.
+const earlyMayors: WallMayor[] = [
+  { id: "herrera", name: "Arsenio Cruz Herrera", short: "Herrera", term: "1901–1905" },
+  { id: "roxas", name: "Félix M. Roxas", short: "Roxas", term: "1905–1917" },
+  { id: "lukban", name: "Justo Lukbán", short: "Lukbán", term: "1917–1920" },
+  { id: "fernandez", name: "Ramón J. Fernández", short: "Fernández", term: "1920–1923" },
+  { id: "rodriguez", name: "Eulogio Rodriguez Sr.", short: "Rodriguez", term: "1923–1924, 1940–1941" },
+  { id: "romualdez", name: "Miguel Romuáldez", short: "Romuáldez", term: "1924–1927" },
+  { id: "earnshaw", name: "Tomás Earnshaw", short: "Earnshaw", term: "1927–1933" },
+  { id: "posadas", name: "Juan Posadas Jr.", short: "Posadas", term: "1934–1940" },
+  { id: "nolasco", name: "Juan G. Nolasco", short: "Nolasco", term: "1941, 1945–1946" },
+  { id: "vargas", name: "Jorge B. Vargas", short: "Vargas", term: "1941–1942" },
+  { id: "guinto", name: "León Guinto Sr.", short: "Guinto", term: "1942–1944" },
+  { id: "h-atienza", name: "Hermenegildo Atienza", short: "H. Atienza", term: "1944–1945" },
+  { id: "fugoso", name: "Valeriano Fugoso Sr.", short: "Fugoso", term: "1946–1947" },
+  { id: "delafuente", name: "Manuel de la Fuente", short: "de la Fuente", term: "1948–1951" },
+];
+const ejercito: WallMayor = { id: "ejercito", name: "Gregorio Ejercito", short: "Ejercito", term: "1987–1988" };
+
+const byId = (id: string) => wallOfMayors.find((m) => m.id === id)!;
+export const railMayors: WallMayor[] = [
+  ...earlyMayors,
+  byId("lacson"), byId("villegas"), byId("bagatsing"), byId("lopez"), ejercito,
+  byId("lim"), byId("atienza"), byId("estrada"), byId("moreno"), byId("lacuna"),
 ];
 
 export const mayorById = Object.fromEntries(wallOfMayors.map((m) => [m.id, m]));
@@ -85,15 +113,6 @@ export const proclamation = {
   dateline: "DONE in the City of Manila, this ___ day of July, in the year of our Lord, two thousand and nineteen.",
 };
 
-// Decorative clippings on the desk. Headlines are generic, not historical claims.
-export const clippings = [
-  { masthead: "Ang Pahayagan", headline: "Who owns the sidewalk?", date: "Martes" },
-  { masthead: "The City Gazette", headline: "Vendors and walkers share crowded Divisoria", date: "Tuesday" },
-  { masthead: "Balitang Maynila", headline: "Ulan, baha, at trapik sa Taft", date: "Lunes" },
-  { masthead: "The City Gazette", headline: "Clock Tower opens its doors to the public", date: "Sunday" },
-  { masthead: "Ang Pahayagan", headline: "Mga botante, handa na", date: "Biyernes" },
-  { masthead: "Evening Courier", headline: "Council weighs new vendor rules", date: "Friday" },
-];
 
 // Digital ballot: visitors pick which mayor the exhibit features next.
 export const ballotCandidates = wallOfMayors.filter((m) => m.id !== "moreno");

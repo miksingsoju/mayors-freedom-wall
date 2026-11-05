@@ -4,28 +4,24 @@ import { featuredMayor, wallOfMayors } from "@/lib/content";
 
 const stations = [
   {
-    num: "I",
     href: "/citizen",
     title: "Citizen's Voice",
     where: "Laptop 1 · the Citizen chair",
     body: "Answer the prompt of the day as a resident of Manila. Pin your letter to the wall, then upvote, downvote and reply to other visitors.",
   },
   {
-    num: "II",
     href: "/mayor",
     title: "The Mayor's Dilemma",
     where: "Laptop 2 · the Mayor's desk",
     body: "Take the seat. Read the briefing, sign a proclamation on a real decision from 2019, then see what the mayor actually did.",
   },
   {
-    num: "III",
     href: "/ballot",
     title: "Digital Ballot",
     where: "Laptop 2 · after the dilemma",
     body: "Tap a portrait to vote for the next mayor the exhibit features. The theme rotates every 3 days.",
   },
   {
-    num: "◐",
     href: "/wall",
     title: "Projector Wall",
     where: "Two side projectors · beside the wall of mayors",
@@ -57,7 +53,6 @@ export default function Home() {
       <div className="stations">
         {stations.map((s) => (
           <Link key={s.href} href={s.href} className="station-card">
-            <span className="station-num">{s.num}</span>
             <span>
               <div className="where">{s.where}</div>
               <h3>{s.title}</h3>

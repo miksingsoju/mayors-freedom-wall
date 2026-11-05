@@ -26,8 +26,7 @@ export default function BallotPage() {
   return (
     <div className="page">
       <div className="ballot-head">
-        <p className="eyebrow">Station III · Digital Ballot — on the Mayor&apos;s desk screen</p>
-        <h1>Who should hang in the spotlight next?</h1>
+        <h1>Who should be the Next Mayor?</h1>
         <p className="muted">Tap a portrait. The winner becomes the exhibit&apos;s featured mayor for the next {ballotRotationDays} days.</p>
       </div>
 

@@ -46,3 +46,9 @@ Then open **http://localhost:3000**.
 ### Using real mayor portraits
 
 The portraits are drawn placeholders. To use real ones, save an image to `public/mayors/<id>.jpg` (for example `public/mayors/lacson.jpg`), then set `photo: "/mayors/lacson.jpg"` on that mayor in `wallOfMayors` in `lib/content.ts`.
+
+## Credits
+
+- Street map of Metro Manila: © OpenStreetMap contributors (https://www.openstreetmap.org/copyright)
+- Divisoria street photo (`public/divisoria.webp`): add its source to the project references.
+- Mayor portraits in `public/mayors/`: list each photo's source in the project references. Lacson and Bagatsing still use drawn placeholders.

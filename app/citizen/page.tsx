@@ -15,7 +15,6 @@ export default function CitizenPage() {
 
   return (
     <div className="page">
-      <p className="eyebrow">Station I · Citizen&apos;s Voice — you are a resident of Manila</p>
       <section className="front-page">
         <div className="np-mast">Ang Tinig ng Maynila</div>
         <div className="np-dateline">
@@ -25,6 +24,10 @@ export default function CitizenPage() {
         </div>
         <span className="kicker">{promptOfTheDay.label}</span>
         <h1>{promptOfTheDay.question}</h1>
+        <figure className="photo">
+          <img src="/divisoria.webp" alt="Vendor stalls and shoppers sharing a crowded street in Divisoria, Manila" />
+          <figcaption>Divisoria, Manila</figcaption>
+        </figure>
         <p className="deck">{promptOfTheDay.helper}</p>
         <p className="letter-label">Your letter to the editor</p>
         <Composer

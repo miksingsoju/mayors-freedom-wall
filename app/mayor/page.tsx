@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { MayorScene, Newspaper } from "@/components/Decor";
+import { Newspaper } from "@/components/Decor";
 import { SortTabs } from "@/components/SortTabs";
 import { Thread } from "@/components/Thread";
 import { dilemma, featuredMayor, proclamation } from "@/lib/content";
@@ -35,13 +35,15 @@ export default function MayorPage() {
 
   return (
     <div className="page">
-      <p className="eyebrow">Station II · The Mayor&apos;s Dilemma — you are the Mayor of Manila</p>
       <Steps current={step} />
-      <MayorScene seated={step !== "brief"} name={name} />
 
       {step === "brief" && (
+        <>
+        <figure className="photo photo-wide">
+          <img src="/divisoria.webp" alt="Vendor stalls and umbrellas lining a crowded street in Divisoria, Manila" />
+          <figcaption>Divisoria, Manila</figcaption>
+        </figure>
         <section className="folder">
-          <div className="stamp-mark">For the Mayor&apos;s eyes</div>
           <div>Briefing · {dilemma.year}</div>
           <h1>{dilemma.title}</h1>
           {dilemma.situation.map((p) => (
@@ -62,6 +64,7 @@ export default function MayorPage() {
             Take the Mayor&apos;s seat →
           </button>
         </section>
+        </>
       )}
 
       {step === "decide" && (
@@ -129,13 +132,8 @@ export default function MayorPage() {
               <div className="sig">{name}</div>
               <div className="sig-line">Mayor, City of Manila</div>
             </div>
-            <button className="seal-button" disabled={!choice || !reasons.trim() || signing} onClick={sign}>
-              {signing ? "Sealing…" : (
-                <span>
-                  Sign
-                  <br />& Seal
-                </span>
-              )}
+            <button disabled={!choice || !reasons.trim() || signing} onClick={sign}>
+              {signing ? "Signing…" : "Sign proclamation"}
             </button>
           </div>
         </section>
