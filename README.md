@@ -18,7 +18,7 @@ npm install
 npm run dev
 ```
 
-Then open **http://localhost:3000**.
+Then open **http://localhost:3000**. It starts on Citizen's Voice, the first station. An overview of every screen, for presenting, is at **/guide**.
 
 ## The five screens
 
@@ -52,5 +52,4 @@ To add or change a portrait, save the image to `public/mayors/` (for example `pu
 
 - Street map of Metro Manila: © OpenStreetMap contributors (https://www.openstreetmap.org/copyright)
 - "What Mayor Isko Moreno actually did" reveal: Rappler, "Vexed by trash, Isko Moreno evicts vendors from Divisoria main street" (Nov 11, 2019), https://www.rappler.com/philippines/244623-isko-moreno-evicts-vendors-divisoria-main-street-november-2019/
-- Divisoria street photo (`public/divisoria.webp`): add its source to the project references.
-- Mayor portraits in `public/mayors/`: list each photo's source in the project references.
+- Mayor portraits are from Wikipedia

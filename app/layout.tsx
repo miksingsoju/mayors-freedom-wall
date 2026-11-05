@@ -32,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/ballot">Ballot</Link>
             <Link href="/wall/a">Projector A</Link>
             <Link href="/wall/b">Projector B</Link>
+            <Link href="/guide">Guide</Link>
           </div>
         </nav>
         <SideRails />
