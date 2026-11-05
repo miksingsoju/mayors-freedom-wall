@@ -9,7 +9,9 @@ export const featuredMayor = {
 // Station 1 — Citizen's Voice: you speak as a constituent about Manila today.
 export const promptOfTheDay = {
   label: "Prompt of the Day",
-  question: "Who should Manila's sidewalks belong to — pedestrians, vendors, or both?",
+  // Tagalog first for Manileños, English underneath for tourists.
+  question: "Para kanino ang bangketa ng Maynila: sa naglalakad, sa nagtitinda, o sa pareho?",
+  questionEn: "Who should Manila's sidewalks belong to: pedestrians, vendors, or both?",
   helper:
     "Think about a street you actually walk on. What would make it work for everyone? Be specific.",
 };
@@ -18,6 +20,8 @@ export const promptOfTheDay = {
 export const dilemma = {
   title: "The Divisoria Dilemma",
   year: "July 2019",
+  question: "Ano ang gagawin mo, Mayor?",
+  questionEn: "What do you do, Mayor?",
   situation: [
     "You have just taken office as Mayor of Manila.",
     "Divisoria's streets and sidewalks are packed with vendor stalls. Pedestrians are forced onto the road, traffic barely moves, and garbage piles up at night.",

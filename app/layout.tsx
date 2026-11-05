@@ -19,7 +19,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={fonts}>
       <body>
-        <div className="nav-hotspot" aria-hidden />
         <nav className="topnav">
           <Link href="/" className="brand">
             <Emblem size={34} />
@@ -31,7 +30,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/citizen">Citizen</Link>
             <Link href="/mayor">Mayor</Link>
             <Link href="/ballot">Ballot</Link>
-            <Link href="/wall">Projector Wall</Link>
+            <Link href="/wall/a">Projector A</Link>
+            <Link href="/wall/b">Projector B</Link>
           </div>
         </nav>
         <SideRails />

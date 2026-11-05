@@ -23,7 +23,7 @@ const stations = [
   },
   {
     href: "/wall",
-    title: "Projector Wall",
+    title: "Projector Walls",
     where: "Two side projectors · beside the wall of mayors",
     body: "Posts and votes from both stations appear here live, sorted by most voted, controversial, both sides, or newest.",
   },
@@ -63,7 +63,7 @@ export default function Home() {
       </div>
 
       <p className="hint">
-        <strong>Demo tip:</strong> open <code>/citizen</code> and <code>/wall</code> side by side. Post or vote in one and watch the
+        <strong>Demo tip:</strong> open <code>/citizen</code> and <code>/wall/a</code> side by side. Post or vote in one and watch the
         other update.
       </p>
     </div>

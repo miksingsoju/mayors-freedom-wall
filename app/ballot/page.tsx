@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Portrait } from "@/components/Decor";
 import { ballotCandidates, ballotRotationDays } from "@/lib/content";
@@ -83,6 +84,9 @@ export default function BallotPage() {
               })}
           </div>
           <p className="muted">This screen resets for the next visitor in a few seconds.</p>
+          <Link className="button" href="/">
+            Finish
+          </Link>
         </section>
       )}
     </div>

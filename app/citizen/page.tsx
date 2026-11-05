@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { Composer } from "@/components/Composer";
 import { SortTabs } from "@/components/SortTabs";
@@ -12,18 +13,20 @@ const today = new Date().toLocaleDateString("en-PH", { weekday: "long", month: "
 export default function CitizenPage() {
   const { state, post, vote } = useExhibit();
   const [sort, setSort] = useState<SortMode>("top");
+  const [posted, setPosted] = useState(false);
 
   return (
     <div className="page">
       <section className="front-page">
-        <div className="np-mast">Ang Tinig ng Maynila</div>
+        <div className="np-mast">Mahal Kong Maynila</div>
         <div className="np-dateline">
           <span>{today}</span>
-          <span>The Citizen&apos;s Voice</span>
+          <span>Boses ng Mamamayan</span>
           <span>Libre</span>
         </div>
         <span className="kicker">{promptOfTheDay.label}</span>
         <h1>{promptOfTheDay.question}</h1>
+        <p className="prompt-en">{promptOfTheDay.questionEn}</p>
         <figure className="photo">
           <img src="/divisoria.webp" alt="Vendor stalls and shoppers sharing a crowded street in Divisoria, Manila" />
           <figcaption>Divisoria, Manila</figcaption>
@@ -33,8 +36,20 @@ export default function CitizenPage() {
         <Composer
           placeholder="Dear Editor, …"
           submitLabel="Pin it to the wall"
-          onSubmit={(author, body) => post({ station: "citizen", author, body })}
+          onSubmit={async (author, body) => {
+            const ok = await post({ station: "citizen", author, body });
+            if (ok) setPosted(true);
+            return ok;
+          }}
         />
+        {posted && (
+          <div className="next-bar">
+            <p>Your letter is on the wall. Vote on or reply to others below, or move on.</p>
+            <Link className="button" href="/mayor">
+              Next: The Mayor&apos;s Dilemma →
+            </Link>
+          </div>
+        )}
       </section>
 
       <div className="section-head">

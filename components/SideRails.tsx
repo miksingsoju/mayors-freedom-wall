@@ -6,8 +6,8 @@ import { railMayors } from "@/lib/content";
 import { Portrait } from "./Decor";
 
 export function SideRails() {
-  // The projector wall uses the full width.
-  if (usePathname() === "/wall") return null;
+  // The projector pages use the full width.
+  if (usePathname().startsWith("/wall/")) return null;
 
   return (
     <>

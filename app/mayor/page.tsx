@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { DecisionBars } from "@/components/DecisionBars";
 import { Newspaper } from "@/components/Decor";
 import { SortTabs } from "@/components/SortTabs";
 import { Thread } from "@/components/Thread";
@@ -19,8 +20,6 @@ export default function MayorPage() {
   const [signing, setSigning] = useState(false);
   const [sort, setSort] = useState<SortMode>("top");
 
-  const decisions = state?.comments.filter((c) => c.station === "mayor" && !c.parentId && c.choice) ?? [];
-  const total = decisions.length || 1;
 
   async function sign() {
     if (!choice || !reasons.trim()) return;
@@ -55,6 +54,8 @@ export default function MayorPage() {
               <li key={c}>{c}</li>
             ))}
           </ul>
+          <h2 className="folder-question">{dilemma.question}</h2>
+          <p className="prompt-en">{dilemma.questionEn}</p>
           <button
             onClick={() => {
               setStep("decide");
@@ -149,28 +150,17 @@ export default function MayorPage() {
               ))}
             </div>
           </Newspaper>
+          <div className="next-bar">
+            <p>Your proclamation is signed. Debate the others below, or move on.</p>
+            <Link className="button" href="/ballot">
+              Next: Cast your ballot →
+            </Link>
+          </div>
 
           <div className="section-head">
             <h2>How the visiting mayors decided</h2>
           </div>
-          <div className="bars">
-            {dilemma.choices.map((c) => {
-              const n = decisions.filter((d) => d.choice === c.id).length;
-              const pct = Math.round((n / total) * 100);
-              return (
-                <div key={c.id} className={choice === c.id ? "bar mine" : "bar"}>
-                  <span className="bar-label">
-                    {c.label}
-                    {choice === c.id && " (your order)"}
-                  </span>
-                  <span className="bar-track">
-                    <span className="bar-fill" style={{ width: `${pct}%` }} />
-                  </span>
-                  <span className="bar-value">{pct}%</span>
-                </div>
-              );
-            })}
-          </div>
+          {state && <DecisionBars comments={state.comments} mine={choice} />}
 
           <div className="section-head">
             <h2>Debate the proclamations</h2>
@@ -186,11 +176,6 @@ export default function MayorPage() {
               onReply={(parentId, author, body) => post({ station: "mayor", parentId, author, body })}
             />
           )}
-          <div className="next">
-            <Link className="button" href="/ballot">
-              Last step: cast your ballot →
-            </Link>
-          </div>
         </>
       )}
     </div>
