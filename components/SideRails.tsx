@@ -13,7 +13,6 @@ export function SideRails() {
     <>
       <aside className="rail rail-left" aria-hidden>
         <div className="map-strip">
-          <span className="script-quote">Ang lungsod ay para sa lahat.</span>
         </div>
         <div className="rail-wall">
           <div className="rail-portraits">
@@ -26,7 +25,6 @@ export function SideRails() {
 
       <aside className="rail rail-right" aria-hidden>
         <div className="map-strip">
-          <span className="script-quote">Ikaw ang tinig ng Maynila.</span>
         </div>
         <div className="rail-wall">
           <div className="rail-portraits">
