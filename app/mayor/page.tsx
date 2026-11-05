@@ -142,13 +142,19 @@ export default function MayorPage() {
 
       {step === "reveal" && (
         <>
-          <Newspaper masthead="The City Gazette" headline={dilemma.reveal.heading} date={dilemma.year} className="clipping">
+          <Newspaper masthead="The City Gazette" headline={dilemma.reveal.heading} date={dilemma.reveal.date} className="clipping">
             <div className="byline">On the record · {featuredMayor.name}</div>
             <div className="np-text">
               {dilemma.reveal.body.map((p) => (
                 <p key={p}>{p}</p>
               ))}
             </div>
+            <p className="source-line">
+              Source:{" "}
+              <a href={dilemma.reveal.sourceUrl} target="_blank" rel="noreferrer">
+                {dilemma.reveal.source}
+              </a>
+            </p>
           </Newspaper>
           <div className="next-bar">
             <p>Your proclamation is signed. Debate the others below, or move on.</p>

@@ -251,6 +251,7 @@ img.portrait-art { filter: sepia(0.3) saturate(0.75) contrast(1.05); } /* tie mi
 .clipping .np-text { columns: 2 260px; column-gap: 22px; column-rule: 1px solid #b9ad97; text-align: justify; hyphens: auto; font-size: 0.95rem; }
 .clipping .np-text p { margin: 0 0 10px; }
 .clipping .np-text p:first-child::first-letter { font-family: var(--font-display); font-size: 3rem; float: left; line-height: 0.85; padding: 4px 6px 0 0; font-weight: 900; }
+.source-line { margin: 10px 0 0; font-size: 0.8rem; color: #5e554a; }
 .byline { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #5e554a; margin-bottom: 8px; }
 
 .bars { display: grid; gap: 10px; margin: 14px 0; }

@@ -38,13 +38,16 @@ export const dilemma = {
     { id: "schedule", label: "Allow vending only at set hours, with lanes kept clear" },
     { id: "other", label: "Something else (explain below)" },
   ],
-  // TODO: verify against news reports from July–August 2019 before the demo.
+  // From Rappler, "Vexed by trash, Isko Moreno evicts vendors from Divisoria main street" (Nov 11, 2019).
   reveal: {
     heading: "What Mayor Isko Moreno actually did",
+    date: "November 2019",
+    source: "Rappler, November 11, 2019",
+    sourceUrl: "https://www.rappler.com/philippines/244623-isko-moreno-evicts-vendors-divisoria-main-street-november-2019/",
     body: [
-      "Within his first days in office, the city launched clearing operations in Divisoria, removing stalls and obstructions from streets and sidewalks.",
-      "Vendors were later allowed back under stricter rules — staying within marked areas, keeping roads passable, and cleaning up after themselves.",
-      "Supporters praised the visible results; critics asked whether the poorest vendors carried the cost of order.",
+      "He chose to regulate the vendors rather than remove them all. Vendors paid the city directly for a paint-marked space at the side of the road, through a ticketing system meant to end the extortion they had faced.",
+      "The deal had a condition: keep the streets clean. On November 11, 2019, a surprise early-morning inspection found Ylaya Street, one of Divisoria's main streets, covered in trash. He ordered hundreds of vendors off the street that same day.",
+      "The city cited its new anti-littering ordinance, \"Tapat Ko, Linis Ko.\" His frustration was plain: \"I gave them livelihood. I removed the abusers.\"",
     ],
   },
 };
